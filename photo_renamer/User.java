@@ -364,6 +364,19 @@ public class User {
 		scanner.close();
 		return buffer.toString().split("\n");
 	}
+	
+	public ArrayList<String> getPaths() {
+		return im.getPaths();
+	}
+	
+	public Image findImageWithPath(String path) {
+		return im.findImageWithPath(path);
+	}
+	
+//	// for demo:
+//	public String[] showImageList() {
+//		return im.showImageList();
+//	}
 
 	// Main Methods for A2 Demo (Will Paste Later):
 

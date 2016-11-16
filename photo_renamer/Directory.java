@@ -137,6 +137,21 @@ public class Directory extends FileNode {
 		}
 		return contents.toString().split("\n");
 	}
+	
+	//A3: if GUI wants JList<Images>
+	public Image[] getImages() {
+		ArrayList<Image> list = new ArrayList<Image>();
+		for (FileNode childNode : this.getChildren()) {
+			if (childNode.isImage()) {
+				list.add((Image)childNode);
+			} else {
+				for (Image i : ((Directory) childNode).getImages()){
+					list.add(i);
+				}
+			}
+		}
+		return list.toArray(new Image[list.size()]);
+	}
 
 	@Override
 	public boolean isDirectory() {
