@@ -206,23 +206,6 @@ public class ImageManager {
 		}
 	}
 
-	public ArrayList<String> getPaths() {
-		ArrayList<String> paths = new ArrayList<String>();
-		for (Image i : imageList) {
-			paths.add(i.getPath());
-		}
-		return paths;
-	}
-
-	public Image findImageWithPath(String path) {
-		for (Image i : imageList) {
-			if (i.getPath() == path) {
-				return i;
-			}
-		}
-		return null;
-	}
-
 	/**
 	 * Returns the logger for this ImageManager.
 	 * 
@@ -251,15 +234,5 @@ public class ImageManager {
 		common.retainAll(image2.getTags());
 		return common;
 	}
-
-	// //for demo:
-	// public String[] showImageList() {
-	// String result = "";
-	// for (Image i: imageList) {
-	// result += i.toString();
-	// result += "\n";
-	// }
-	// return result.split("\n");
-	// }
 
 }
